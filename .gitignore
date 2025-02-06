@@ -1,3 +1,4 @@
 .env
 *.pyc
 StocksInfo.sqlite3
+requirements

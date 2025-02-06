@@ -5,7 +5,9 @@ from aiogram.fsm.state import State,StatesGroup
 from aiogram.fsm.context import FSMContext
 
 import data.keyboards as keyboard
-import data.requests as rq
+import data.request as rq
+import json
+
 
 ######################################
 
@@ -14,9 +16,7 @@ router = Router()
 class Stocks(StatesGroup):
     name_stock = State()
     amount = State()
-    trade_date = State()
     price = State()
-    type_of_stock = State()
     info = State()
 
 ######################################
@@ -61,30 +61,81 @@ async def new_deal(message: types.Message) -> None:
 
 
 @router.message(F.text == "Покупка📈")
-async def buy_deal(message: types.Message, state: FSMContext) -> None:
+async def buy_deal(message: types.Message) -> None:
     if message.from_user.id == int(config("Admin_ID")):
         await message.answer(
             "Введите <b>название акции</b>, которую Вы купили.",
-            parse_mode = "HTML",
+            parse_mode="HTML"
         )
-        await state.set_state(Stocks.name_stock) 
+        await message.answer(
+            "<u><b>ВАЖНО!</b></u>\n\nМожно указать и тикер акции, но обязательно необходимо написать <b>существующую</b> ценную бумагу.(пока только Ru рынок акций)\n\n" + \
+            "Вы можете вывести все доступные акции и их тикеры.",
+            parse_mode = "HTML",
+            reply_markup=keyboard.names_stocks_inline
+        )
         return
     await message.answer(
         "<i>Извините, но это частный бот.</i>",
         parse_mode="HTML",
     )
 
+@router.callback_query(F.data == "print_info")
+async def print_stocks_names(callback: types.CallbackQuery, state: FSMContext):
+    await callback.message.delete()
+
+    file_path = r"data\requirements\Акции.pdf"
+    json_file = types.FSInputFile(file_path)
+
+    await callback.message.answer_document(
+        document=json_file,
+        caption="Тикеры и названия акций."
+    )
+    
+    await callback.message.answer(
+        "Вы можете продолжить ввод названия.↓"
+    )
+    await state.set_state(Stocks.name_stock)
+
+@router.callback_query(F.data == "no_print_info")
+async def no_print(callback: types.CallbackQuery, state: FSMContext):
+    await callback.message.delete()
+    await state.set_state(Stocks.name_stock)    
+
 @router.message(Stocks.name_stock)
 async def name_of_stock(message: types.Message, state: FSMContext):
     await state.update_data(name_stock = message.text)
     data = await state.get_data()
-    await rq.add_name_stock(data['name_stock'])
+    check = await rq.check_names(data['name_stock'])
     
+    if not check:
+        await state.clear()
+        await message.answer(
+            "<i>Нет такой ценной бумаги!</i>",
+            parse_mode="HTML",
+            reply_markup=keyboard.main_keyboard
+        )
+        return
+    await state.set_state(Stocks.amount)
     await message.answer(
-        "SPS",
-        reply_markup=keyboard.main_keyboard,
+        "Введите <i><b>количество</b></i> купленных акций.<i><b>(разрешены только натуральные числа)</b></i>",
+        parse_mode="HTML"
     )
-    await state.clear()
 
+@router.message(Stocks.amount)
+async def amount_of_stock(message: types.Message, state: FSMContext):
+    if not message.text.isdigit() or message.text == '0':
+        await message.answer(
+            "<i><b>Разрешены только натуральные числа!</b></i>",
+            parse_mode="HTML",
+            reply_markup=keyboard.main_keyboard
+        )
+        await state.clear()
+        return
+    await state.update_data(amount = message.text)
+    await message.answer(
+        "Введите <b><i>полную цену</i></b> покупки.(без комиссии брокера)",
+        parse_mode="HTML"
+    )
+    await state.set_state(Stocks.price)
 
 #######################################

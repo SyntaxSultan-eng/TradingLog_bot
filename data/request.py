@@ -1,6 +1,7 @@
-# from data.database import async_session
-# from data.database import Stock
-# from sqlalchemy import select
+from data.database import async_session
+from data.database import Deal
+#from sqlalchemy import select
+from datetime import datetime
 import aiofiles
 import json
 # import asyncio
@@ -14,10 +15,18 @@ async def check_names(message: str) -> bool:
         return True
     return False
 
-async def add_new_stock():
-    pass
-    #async with async_session() as session:
-
+async def add_new_stock(name : str, amount : int, price : float):
+    current_time = datetime.now()
+    async with async_session() as session:
+        new_deal = Deal(
+            name_stock=name,
+            amount_stock=amount,
+            price_stock=price,
+            date_deal=current_time 
+        )
+        session.add(new_deal)
+        await session.commit()
+        
 
 # async def main():
 #     result = await check_names("мЕЧеЛ")

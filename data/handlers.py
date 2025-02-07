@@ -6,7 +6,6 @@ from aiogram.fsm.context import FSMContext
 
 import data.keyboards as keyboard
 import data.request as rq
-import json
 
 
 ######################################
@@ -17,7 +16,6 @@ class Stocks(StatesGroup):
     name_stock = State()
     amount = State()
     price = State()
-    info = State()
 
 ######################################
 
@@ -131,11 +129,45 @@ async def amount_of_stock(message: types.Message, state: FSMContext):
         )
         await state.clear()
         return
-    await state.update_data(amount = message.text)
+    await state.update_data(amount = int(message.text))
     await message.answer(
-        "Введите <b><i>полную цену</i></b> покупки.(без комиссии брокера)",
+        "Введите <b><i>полную цену</i></b> покупки.(без комиссии брокера)\n\n<b><i>Только рациональные числа >0(для десятичных дробей использовать .)</i></b>",
         parse_mode="HTML"
     )
     await state.set_state(Stocks.price)
+
+@router.message(Stocks.price)
+async def price_of_stock(message: types.Message, state: FSMContext):
+    try:
+        price_stock = float(message.text)
+        if price_stock > 0:
+            await state.update_data(price = price_stock)
+            await message.answer(
+                "Заносим данные в Базу данных.⚙️",
+            )
+
+            data = await state.get_data()
+            await rq.add_new_stock(data['name_stock'],data['amount'],data['price'])
+            await message.answer(f"{data['name_stock'],data['amount'],data['price']}")
+            await message.answer(
+                "<i><b>Данные были успешно добавлены.</b></i>",
+                reply_markup=keyboard.main_keyboard,
+                parse_mode="HTML"
+            )
+        else:
+           await message.answer(
+                "<i><b>Только рациональные числа >0</b></i>",
+                parse_mode="HTML",
+                reply_markup=keyboard.main_keyboard
+            )
+        await state.clear()
+        return 
+    except ValueError:
+        await message.answer(
+            "<i><b>Только рациональные числа >0</b></i>",
+            parse_mode="HTML",
+            reply_markup=keyboard.main_keyboard
+        )
+        await state.clear()        
 
 #######################################

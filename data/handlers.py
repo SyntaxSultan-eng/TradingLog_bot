@@ -16,6 +16,7 @@ class Stocks(StatesGroup):
     name_stock = State()
     amount = State()
     price = State()
+    deal_type = State()
 
 ######################################
 
@@ -59,7 +60,7 @@ async def new_deal(message: types.Message) -> None:
 
 
 @router.message(F.text == "Покупка📈")
-async def buy_deal(message: types.Message) -> None:
+async def buy_deal(message: types.Message, state: FSMContext):
     if message.from_user.id == int(config("Admin_ID")):
         await message.answer(
             "Введите <b>название акции</b>, которую Вы купили.",
@@ -71,6 +72,27 @@ async def buy_deal(message: types.Message) -> None:
             parse_mode = "HTML",
             reply_markup=keyboard.names_stocks_inline
         )
+        await state.update_data(deal_type = "Покупка")
+        return
+    await message.answer(
+        "<i>Извините, но это частный бот.</i>",
+        parse_mode="HTML",
+    )
+
+@router.message(F.text == "Продажа📉")
+async def sell_deal(message: types.Message, state:FSMContext):
+    if message.from_user.id == int(config("Admin_ID")):
+        await message.answer(
+            "Введите <b>название акции</b>, которую Вы продали.",
+            parse_mode="HTML"
+        )
+        await message.answer(
+            "<u><b>ВАЖНО!</b></u>\n\nМожно указать и тикер акции, но обязательно необходимо написать <b>существующую</b> ценную бумагу.(пока только Ru рынок акций)\n\n" + \
+            "Вы можете вывести все доступные акции и их тикеры.",
+            parse_mode = "HTML",
+            reply_markup=keyboard.names_stocks_inline
+        )
+        await state.update_data(deal_type = "Продажа")
         return
     await message.answer(
         "<i>Извините, но это частный бот.</i>",
@@ -115,7 +137,7 @@ async def name_of_stock(message: types.Message, state: FSMContext):
         return
     await state.set_state(Stocks.amount)
     await message.answer(
-        "Введите <i><b>количество</b></i> купленных акций.<i><b>(разрешены только натуральные числа)</b></i>",
+        "Введите <i><b>количество</b></i> акций, которое участвовало в сделке.<i><b>(разрешены только натуральные числа)</b></i>",
         parse_mode="HTML"
     )
 
@@ -131,7 +153,7 @@ async def amount_of_stock(message: types.Message, state: FSMContext):
         return
     await state.update_data(amount = int(message.text))
     await message.answer(
-        "Введите <b><i>полную цену</i></b> покупки.(без комиссии брокера)\n\n<b><i>Только рациональные числа >0(для десятичных дробей использовать .)</i></b>",
+        "Введите <b><i>полную цену</i></b> сделки.(без комиссии брокера)\n\n<b><i>Только рациональные числа >0(для десятичных дробей использовать .)</i></b>",
         parse_mode="HTML"
     )
     await state.set_state(Stocks.price)
@@ -147,8 +169,8 @@ async def price_of_stock(message: types.Message, state: FSMContext):
             )
 
             data = await state.get_data()
-            await rq.add_new_stock(data['name_stock'],data['amount'],data['price'])
-            await message.answer(f"{data['name_stock'],data['amount'],data['price']}")
+            await rq.add_new_stock(data['name_stock'],data['amount'],data['price'],data['deal_type'])
+
             await message.answer(
                 "<i><b>Данные были успешно добавлены.</b></i>",
                 reply_markup=keyboard.main_keyboard,

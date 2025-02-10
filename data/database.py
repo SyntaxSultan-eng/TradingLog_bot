@@ -16,6 +16,7 @@ class Deal(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name_stock: Mapped[str] = mapped_column(String(70),index=True)
+    type_of_deal: Mapped[str] = mapped_column(String(7))
     amount_stock: Mapped[int] = mapped_column()
     price_stock: Mapped[float] = mapped_column(Numeric(10, 2))
     date_deal : Mapped[datetime] = mapped_column(DateTime)

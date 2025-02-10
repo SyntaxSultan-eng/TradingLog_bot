@@ -15,11 +15,12 @@ async def check_names(message: str) -> bool:
         return True
     return False
 
-async def add_new_stock(name : str, amount : int, price : float):
+async def add_new_stock(name : str, amount : int, price : float, deal_type : str):
     current_time = datetime.now()
     async with async_session() as session:
         new_deal = Deal(
             name_stock=name,
+            type_of_deal = deal_type,
             amount_stock=amount,
             price_stock=price,
             date_deal=current_time 

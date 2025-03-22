@@ -6,6 +6,7 @@ from aiogram.fsm.context import FSMContext
 
 import data.keyboards as keyboard
 import data.request as rq
+import os
 
 
 ######################################
@@ -103,7 +104,7 @@ async def sell_deal(message: types.Message, state:FSMContext):
 async def print_stocks_names(callback: types.CallbackQuery, state: FSMContext):
     await callback.message.delete()
 
-    file_path = r"data\requirements\Акции.pdf"
+    file_path = os.path.join("data","requirements","Акции.pdf")
     json_file = types.FSInputFile(file_path)
 
     await callback.message.answer_document(
@@ -193,3 +194,9 @@ async def price_of_stock(message: types.Message, state: FSMContext):
         await state.clear()        
 
 #######################################
+
+######### Полная статистика📊 ######
+
+@router.message(F.text == "Полная статистика📊")
+async def full_statistic(message: types.Message):
+    pass

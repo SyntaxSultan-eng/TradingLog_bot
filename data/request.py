@@ -46,10 +46,10 @@ async def add_new_stock(name : str, amount : int, price : float, deal_type : str
         await session.commit()
         
 
-# async def main():
-#     result = await get_name_ticker("AFLT")
-#     print(result)
+async def main():
+    result = await get_name_ticker("AFLT")
+    print(result)
 
-# if __name__ == "__main__":
-#     asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
 

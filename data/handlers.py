@@ -199,4 +199,10 @@ async def price_of_stock(message: types.Message, state: FSMContext):
 
 @router.message(F.text == "Полная статистика📊")
 async def full_statistic(message: types.Message):
-    pass
+    if message.from_user.id != int(config("Admin_ID")):
+        await message.answer(
+            "<i>Извините, но это частный бот.</i>",
+            parse_mode="HTML"
+        )
+        return
+    

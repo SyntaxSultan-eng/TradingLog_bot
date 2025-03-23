@@ -1,12 +1,12 @@
 from data.database import async_session
 from data.database import Deal
-#from sqlalchemy import select
+from sqlalchemy import select,func
 from datetime import datetime
 import aiofiles
 import json
 import os
 
-# import asyncio
+import asyncio
 
 
 async def check_names(message: str) -> bool:
@@ -44,10 +44,19 @@ async def add_new_stock(name : str, amount : int, price : float, deal_type : str
         )
         session.add(new_deal)
         await session.commit()
+
+async def full_info():
+    async with async_session() as session:
+        total_deals = await session.scalar(select(func.count(Deal.id))) #Общее количество совершенных сделок.
+        #.scalar - лучше подходит для возврата числа или строки, а .execute - для множества данных. Func.count подсчитывает кол-во строк с данным параметром.
+        total_buy = await session.scalar(select(func.sum(Deal.price_stock)).where(Deal.type_of_deal == "Покупка")) or 0 # Вся сумма покупки.
+        total_sell = await session.scalar(select(func.sum(Deal.price_stock)).where(Deal.type_of_deal == "Продажа")) or 0 # Вся сумма продаж.
+        #func.sum считает сумму всех ячеек с условием "Покупка"/"Продажа". Мы можем не беспокоиться о TypeError, потому что проверка проходит в handlers.
         
+    return total_sell
 
 async def main():
-    result = await get_name_ticker("AFLT")
+    result = await full_info()
     print(result)
 
 if __name__ == "__main__":

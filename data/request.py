@@ -49,10 +49,13 @@ async def full_info():
     async with async_session() as session:
         total_deals = await session.scalar(select(func.count(Deal.id))) #Общее количество совершенных сделок.
         #.scalar - лучше подходит для возврата числа или строки, а .execute - для множества данных. Func.count подсчитывает кол-во строк с данным параметром.
+
         total_buy = await session.scalar(select(func.sum(Deal.price_stock)).where(Deal.type_of_deal == "Покупка")) or 0 # Вся сумма покупки.
         total_sell = await session.scalar(select(func.sum(Deal.price_stock)).where(Deal.type_of_deal == "Продажа")) or 0 # Вся сумма продаж.
         #func.sum считает сумму всех ячеек с условием "Покупка"/"Продажа". Мы можем не беспокоиться о TypeError, потому что проверка проходит в handlers.
         
+
+
     return total_sell
 
 async def main():

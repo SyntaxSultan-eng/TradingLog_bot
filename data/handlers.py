@@ -59,6 +59,19 @@ async def new_deal(message: types.Message) -> None:
         parse_mode="HTML"
     )
 
+@router.message(F.text == "Назад🔙")
+async def return_back(message: types.Message, state: FSMContext):
+    if message.from_user.id == int(config("Admin_ID")):
+        await message.answer(
+            "Возвращаю Вас на главное меню!🔙",
+            reply_markup=keyboard.main_keyboard
+        )
+        await state.clear()
+        return
+    await message.answer(
+        "<i>Извините, но это частный бот.</i>",
+        parse_mode="HTML"
+    )
 
 @router.message(F.text == "Покупка📈")
 async def buy_deal(message: types.Message, state: FSMContext):
@@ -206,3 +219,12 @@ async def full_statistic(message: types.Message):
         )
         return
     
+    await message.answer(
+        "<i>Выберите режим</i>.⤵️",
+        parse_mode="HTML",
+        reply_markup=keyboard.full_statistic_buttons
+    )
+
+@router.callback_query(F.data == "full_stats")
+async def handle_full_stats(callback: types.CallbackQuery):
+    pass

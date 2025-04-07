@@ -225,6 +225,33 @@ async def full_statistic(message: types.Message):
         reply_markup=keyboard.full_statistic_buttons
     )
 
-@router.callback_query(F.data == "full_stats")
+@router.callback_query(F.data == "full_static")
 async def handle_full_stats(callback: types.CallbackQuery):
-    pass
+    await callback.message.delete()
+
+    info = await rq.full_info()
+
+    await callback.message.answer(
+        "🔁 <b>Сделки:</b>\n"
+        f"• Всего: {info['total_deals']} ({info["total_deals_buy"]} покупок / {info["total_deals_sell"]} продаж)\n"
+        f"• Полная сумма покупок: {info["total_buy"]} ₽\n"
+        f"• Полная сумма продаж: {info["total_sell"]} ₽\n",
+        parse_mode= "HTML",
+        reply_markup=keyboard.main_keyboard
+    )
+
+@router.callback_query(F.data == "profit-stocks")
+async def handler_profit(callback: types.CallbackQuery):
+    await callback.message.delete()
+    await callback.message.answer(
+        "В разработке",
+        reply_markup=keyboard.main_keyboard
+    )
+
+@router.callback_query(F.data == "graph")
+async def handler_graph(callback: types.CallbackQuery):
+    await callback.message.delete()
+    await callback.message.answer(
+        "В разработке",
+        reply_markup=keyboard.main_keyboard
+    )

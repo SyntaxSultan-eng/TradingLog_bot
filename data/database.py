@@ -15,11 +15,12 @@ class Deal(Base):
     __tablename__ = "Deals"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    name_stock: Mapped[str] = mapped_column(String(70),index=True)
-    ticker: Mapped[str] = mapped_column(String(5), index=True)
-    type_of_deal: Mapped[str] = mapped_column(String(7))
+    name_stock: Mapped[str] = mapped_column(String(70))
+    ticker: Mapped[str] = mapped_column(String(5))
+    type_of_deal: Mapped[str] = mapped_column(String(7), index = True)
     amount_stock: Mapped[int] = mapped_column()
     price_stock: Mapped[float] = mapped_column(Numeric(10, 2))
+    full_price_stock: Mapped[float] = mapped_column(Numeric(10,2))
     date_deal : Mapped[datetime] = mapped_column(DateTime)
 
 

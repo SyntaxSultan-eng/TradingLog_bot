@@ -1,0 +1,1242 @@
+[
+    {
+        "ticker": "ABRD",
+        "price": 181.4,
+        "lot_size": 10
+    },
+    {
+        "ticker": "AFKS",
+        "price": 14.851,
+        "lot_size": 100
+    },
+    {
+        "ticker": "AFLT",
+        "price": 68.83,
+        "lot_size": 10
+    },
+    {
+        "ticker": "AKRN",
+        "price": 16380,
+        "lot_size": 1
+    },
+    {
+        "ticker": "ALRS",
+        "price": 48.84,
+        "lot_size": 10
+    },
+    {
+        "ticker": "AMEZ",
+        "price": 0,
+        "lot_size": 100
+    },
+    {
+        "ticker": "APRI",
+        "price": 13.3,
+        "lot_size": 10
+    },
+    {
+        "ticker": "APTK",
+        "price": 10.386,
+        "lot_size": 10
+    },
+    {
+        "ticker": "AQUA",
+        "price": 676.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "ARSA",
+        "price": 10.68,
+        "lot_size": 100
+    },
+    {
+        "ticker": "ASSB",
+        "price": 1.77,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "ASTR",
+        "price": 420.45,
+        "lot_size": 1
+    },
+    {
+        "ticker": "AVAN",
+        "price": 756,
+        "lot_size": 1
+    },
+    {
+        "ticker": "BANE",
+        "price": 2031.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "BANEP",
+        "price": 1139,
+        "lot_size": 1
+    },
+    {
+        "ticker": "BELU",
+        "price": 484,
+        "lot_size": 1
+    },
+    {
+        "ticker": "BISVP",
+        "price": 9.17,
+        "lot_size": 100
+    },
+    {
+        "ticker": "BLNG",
+        "price": 14.63,
+        "lot_size": 100
+    },
+    {
+        "ticker": "BRZL",
+        "price": 1940,
+        "lot_size": 1
+    },
+    {
+        "ticker": "BSPB",
+        "price": 390.9,
+        "lot_size": 10
+    },
+    {
+        "ticker": "BSPBP",
+        "price": 73.9,
+        "lot_size": 100
+    },
+    {
+        "ticker": "CARM",
+        "price": 1.4975,
+        "lot_size": 100
+    },
+    {
+        "ticker": "CBOM",
+        "price": 7.893,
+        "lot_size": 100
+    },
+    {
+        "ticker": "CHGZ",
+        "price": 93.6,
+        "lot_size": 10
+    },
+    {
+        "ticker": "CHKZ",
+        "price": 17800,
+        "lot_size": 1
+    },
+    {
+        "ticker": "CHMF",
+        "price": 1046.8,
+        "lot_size": 1
+    },
+    {
+        "ticker": "CHMK",
+        "price": 5115,
+        "lot_size": 1
+    },
+    {
+        "ticker": "CNTL",
+        "price": 10.34,
+        "lot_size": 100
+    },
+    {
+        "ticker": "CNTLP",
+        "price": 7.34,
+        "lot_size": 100
+    },
+    {
+        "ticker": "DATA",
+        "price": 131.82,
+        "lot_size": 1
+    },
+    {
+        "ticker": "DELI",
+        "price": 172.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "DIAS",
+        "price": 3245.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "DIOD",
+        "price": 11.08,
+        "lot_size": 100
+    },
+    {
+        "ticker": "DVEC",
+        "price": 2.104,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "DZRD",
+        "price": 4000,
+        "lot_size": 1
+    },
+    {
+        "ticker": "DZRDP",
+        "price": 2690,
+        "lot_size": 1
+    },
+    {
+        "ticker": "EELT",
+        "price": 12.04,
+        "lot_size": 10
+    },
+    {
+        "ticker": "ELMT",
+        "price": 0.1329,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "ENPG",
+        "price": 413.05,
+        "lot_size": 1
+    },
+    {
+        "ticker": "ETLN",
+        "price": 57.02,
+        "lot_size": 1
+    },
+    {
+        "ticker": "EUTR",
+        "price": 123.4,
+        "lot_size": 1
+    },
+    {
+        "ticker": "FEES",
+        "price": 0.0696,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "FESH",
+        "price": 54.98,
+        "lot_size": 10
+    },
+    {
+        "ticker": "FIXP",
+        "price": 161.4,
+        "lot_size": 1
+    },
+    {
+        "ticker": "FLOT",
+        "price": 81.43,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GAZA",
+        "price": 674,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GAZAP",
+        "price": 427.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GAZC",
+        "price": 0,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GAZS",
+        "price": 0,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GAZT",
+        "price": 0,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GCHE",
+        "price": 3871,
+        "lot_size": 1
+    },
+    {
+        "ticker": "GECO",
+        "price": 28.67,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GEMA",
+        "price": 123.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GEMC",
+        "price": 772.7,
+        "lot_size": 1
+    },
+    {
+        "ticker": "GMKN",
+        "price": 115.82,
+        "lot_size": 10
+    },
+    {
+        "ticker": "GTRK",
+        "price": 222.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "HEAD",
+        "price": 3056,
+        "lot_size": 1
+    },
+    {
+        "ticker": "HIMCP",
+        "price": 22.22,
+        "lot_size": 100
+    },
+    {
+        "ticker": "HNFG",
+        "price": 606.6,
+        "lot_size": 1
+    },
+    {
+        "ticker": "HYDR",
+        "price": 0.4619,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "IGST",
+        "price": 6100,
+        "lot_size": 1
+    },
+    {
+        "ticker": "IGSTP",
+        "price": 4400,
+        "lot_size": 1
+    },
+    {
+        "ticker": "IRAO",
+        "price": 3.5465,
+        "lot_size": 100
+    },
+    {
+        "ticker": "IRKT",
+        "price": 30.28,
+        "lot_size": 100
+    },
+    {
+        "ticker": "IVAT",
+        "price": 153.45,
+        "lot_size": 1
+    },
+    {
+        "ticker": "JNOS",
+        "price": 16.2,
+        "lot_size": 100
+    },
+    {
+        "ticker": "JNOSP",
+        "price": 10.6,
+        "lot_size": 100
+    },
+    {
+        "ticker": "KAZT",
+        "price": 472,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KAZTP",
+        "price": 484.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KBSB",
+        "price": 457,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KCHE",
+        "price": 0.462,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "KCHEP",
+        "price": 0.76,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "KGKC",
+        "price": 43.4,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KGKCP",
+        "price": 50.6,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KLSB",
+        "price": 23.03,
+        "lot_size": 100
+    },
+    {
+        "ticker": "KLVZ",
+        "price": 3.734,
+        "lot_size": 100
+    },
+    {
+        "ticker": "KMAZ",
+        "price": 103,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KMEZ",
+        "price": 1200,
+        "lot_size": 1
+    },
+    {
+        "ticker": "KOGK",
+        "price": 38000,
+        "lot_size": 1
+    },
+    {
+        "ticker": "KRKN",
+        "price": 9250,
+        "lot_size": 1
+    },
+    {
+        "ticker": "KRKNP",
+        "price": 7960,
+        "lot_size": 1
+    },
+    {
+        "ticker": "KRKOP",
+        "price": 13.94,
+        "lot_size": 100
+    },
+    {
+        "ticker": "KROT",
+        "price": 1465,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KROTP",
+        "price": 466,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KRSB",
+        "price": 15.2,
+        "lot_size": 100
+    },
+    {
+        "ticker": "KRSBP",
+        "price": 15,
+        "lot_size": 100
+    },
+    {
+        "ticker": "KUZB",
+        "price": 0.03745,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "KZOS",
+        "price": 80.7,
+        "lot_size": 10
+    },
+    {
+        "ticker": "KZOSP",
+        "price": 20.65,
+        "lot_size": 10
+    },
+    {
+        "ticker": "LEAS",
+        "price": 637.2,
+        "lot_size": 1
+    },
+    {
+        "ticker": "LENT",
+        "price": 1411,
+        "lot_size": 1
+    },
+    {
+        "ticker": "LIFE",
+        "price": 3.555,
+        "lot_size": 100
+    },
+    {
+        "ticker": "LKOH",
+        "price": 6470.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "LMBZ",
+        "price": 504,
+        "lot_size": 1
+    },
+    {
+        "ticker": "LNZL",
+        "price": 12600,
+        "lot_size": 1
+    },
+    {
+        "ticker": "LNZLP",
+        "price": 1885,
+        "lot_size": 1
+    },
+    {
+        "ticker": "LPSB",
+        "price": 63.65,
+        "lot_size": 100
+    },
+    {
+        "ticker": "LSNG",
+        "price": 14.35,
+        "lot_size": 100
+    },
+    {
+        "ticker": "LSNGP",
+        "price": 203.45,
+        "lot_size": 10
+    },
+    {
+        "ticker": "LSRG",
+        "price": 787.4,
+        "lot_size": 1
+    },
+    {
+        "ticker": "LVHK",
+        "price": 29.75,
+        "lot_size": 100
+    },
+    {
+        "ticker": "MAGE",
+        "price": 3.07,
+        "lot_size": 100
+    },
+    {
+        "ticker": "MAGEP",
+        "price": 2.25,
+        "lot_size": 100
+    },
+    {
+        "ticker": "MAGN",
+        "price": 32.675,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MBNK",
+        "price": 1381.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "MDMG",
+        "price": 1013.2,
+        "lot_size": 1
+    },
+    {
+        "ticker": "MFGS",
+        "price": 357,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MFGSP",
+        "price": 240.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MGKL",
+        "price": 2.509,
+        "lot_size": 100
+    },
+    {
+        "ticker": "MGNT",
+        "price": 4551.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "MGNZ",
+        "price": 0,
+        "lot_size": 1
+    },
+    {
+        "ticker": "MGTS",
+        "price": 1195,
+        "lot_size": 1
+    },
+    {
+        "ticker": "MGTSP",
+        "price": 856,
+        "lot_size": 1
+    },
+    {
+        "ticker": "MISB",
+        "price": 48.4,
+        "lot_size": 100
+    },
+    {
+        "ticker": "MISBP",
+        "price": 45.9,
+        "lot_size": 100
+    },
+    {
+        "ticker": "MOEX",
+        "price": 192.49,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MRKC",
+        "price": 0.554,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "MRKK",
+        "price": 17.18,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MRKP",
+        "price": 0.3734,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "MRKS",
+        "price": 0.5045,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "MRKU",
+        "price": 0.3708,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "MRKV",
+        "price": 0.0687,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "MRKY",
+        "price": 0.0745,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "MRKZ",
+        "price": 0.06165,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "MRSB",
+        "price": 0.72,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "MSNG",
+        "price": 2.21,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "MSRS",
+        "price": 1.1575,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "MSTT",
+        "price": 136.9,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MTLR",
+        "price": 95.42,
+        "lot_size": 1
+    },
+    {
+        "ticker": "MTLRP",
+        "price": 97.1,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MTSS",
+        "price": 218.2,
+        "lot_size": 10
+    },
+    {
+        "ticker": "MVID",
+        "price": 112.85,
+        "lot_size": 1
+    },
+    {
+        "ticker": "NAUK",
+        "price": 503,
+        "lot_size": 10
+    },
+    {
+        "ticker": "NFAZ",
+        "price": 361.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "NKHP",
+        "price": 783,
+        "lot_size": 10
+    },
+    {
+        "ticker": "NKNC",
+        "price": 92.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "NKNCP",
+        "price": 70.78,
+        "lot_size": 10
+    },
+    {
+        "ticker": "NKSH",
+        "price": 48.75,
+        "lot_size": 100
+    },
+    {
+        "ticker": "NLMK",
+        "price": 133.26,
+        "lot_size": 10
+    },
+    {
+        "ticker": "NMTP",
+        "price": 9.26,
+        "lot_size": 100
+    },
+    {
+        "ticker": "NNSB",
+        "price": 3570,
+        "lot_size": 1
+    },
+    {
+        "ticker": "NNSBP",
+        "price": 1210,
+        "lot_size": 1
+    },
+    {
+        "ticker": "NSVZ",
+        "price": 309.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "NVTK",
+        "price": 1101,
+        "lot_size": 1
+    },
+    {
+        "ticker": "OGKB",
+        "price": 0.3492,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "OKEY",
+        "price": 30.67,
+        "lot_size": 10
+    },
+    {
+        "ticker": "OMZZP",
+        "price": 12180,
+        "lot_size": 1
+    },
+    {
+        "ticker": "OZPH",
+        "price": 51.82,
+        "lot_size": 10
+    },
+    {
+        "ticker": "PAZA",
+        "price": 11680,
+        "lot_size": 1
+    },
+    {
+        "ticker": "PHOR",
+        "price": 6176,
+        "lot_size": 1
+    },
+    {
+        "ticker": "PIKK",
+        "price": 426.1,
+        "lot_size": 1
+    },
+    {
+        "ticker": "PLZL",
+        "price": 1890.8,
+        "lot_size": 1
+    },
+    {
+        "ticker": "PMSB",
+        "price": 243,
+        "lot_size": 10
+    },
+    {
+        "ticker": "PMSBP",
+        "price": 253.2,
+        "lot_size": 10
+    },
+    {
+        "ticker": "POSI",
+        "price": 1318.2,
+        "lot_size": 1
+    },
+    {
+        "ticker": "PRFN",
+        "price": 4.164,
+        "lot_size": 100
+    },
+    {
+        "ticker": "PRMB",
+        "price": 29800,
+        "lot_size": 1
+    },
+    {
+        "ticker": "PRMD",
+        "price": 395,
+        "lot_size": 1
+    },
+    {
+        "ticker": "RASP",
+        "price": 246.25,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RBCM",
+        "price": 13.505,
+        "lot_size": 100
+    },
+    {
+        "ticker": "RDRB",
+        "price": 148,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RENI",
+        "price": 118.96,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RGSS",
+        "price": 0.246,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "RKKE",
+        "price": 20130,
+        "lot_size": 1
+    },
+    {
+        "ticker": "RNFT",
+        "price": 120.7,
+        "lot_size": 1
+    },
+    {
+        "ticker": "ROLO",
+        "price": 0.6174,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "ROSN",
+        "price": 446.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "ROST",
+        "price": 122.8,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RTGZ",
+        "price": 53400,
+        "lot_size": 1
+    },
+    {
+        "ticker": "RTKM",
+        "price": 61.02,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RTKMP",
+        "price": 55.75,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RTSB",
+        "price": 2.72,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "RTSBP",
+        "price": 1.324,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "RUAL",
+        "price": 33.435,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RUSI",
+        "price": 76.6,
+        "lot_size": 10
+    },
+    {
+        "ticker": "RZSB",
+        "price": 30.2,
+        "lot_size": 100
+    },
+    {
+        "ticker": "SAGO",
+        "price": 2.835,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "SAGOP",
+        "price": 2.805,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "SARE",
+        "price": 0.436,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "SAREP",
+        "price": 0.2505,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "SBER",
+        "price": 297.95,
+        "lot_size": 10
+    },
+    {
+        "ticker": "SBERP",
+        "price": 296.41,
+        "lot_size": 10
+    },
+    {
+        "ticker": "SELG",
+        "price": 46.98,
+        "lot_size": 10
+    },
+    {
+        "ticker": "SFIN",
+        "price": 1370.2,
+        "lot_size": 1
+    },
+    {
+        "ticker": "SGZH",
+        "price": 1.45,
+        "lot_size": 100
+    },
+    {
+        "ticker": "SIBN",
+        "price": 542.05,
+        "lot_size": 1
+    },
+    {
+        "ticker": "SLEN",
+        "price": 3.305,
+        "lot_size": 100
+    },
+    {
+        "ticker": "SMLT",
+        "price": 1112,
+        "lot_size": 1
+    },
+    {
+        "ticker": "SNGS",
+        "price": 23.06,
+        "lot_size": 100
+    },
+    {
+        "ticker": "SNGSP",
+        "price": 52.47,
+        "lot_size": 10
+    },
+    {
+        "ticker": "SOFL",
+        "price": 104.9,
+        "lot_size": 10
+    },
+    {
+        "ticker": "SPBE",
+        "price": 219.8,
+        "lot_size": 1
+    },
+    {
+        "ticker": "STSB",
+        "price": 3.815,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "STSBP",
+        "price": 4.485,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "SVAV",
+        "price": 662,
+        "lot_size": 1
+    },
+    {
+        "ticker": "SVCB",
+        "price": 16.385,
+        "lot_size": 100
+    },
+    {
+        "ticker": "SVET",
+        "price": 16,
+        "lot_size": 1
+    },
+    {
+        "ticker": "SVETP",
+        "price": 23.55,
+        "lot_size": 1
+    },
+    {
+        "ticker": "T",
+        "price": 3135,
+        "lot_size": 1
+    },
+    {
+        "ticker": "TASB",
+        "price": 1.36,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "TASBP",
+        "price": 0.932,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "TATN",
+        "price": 677.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "TATNP",
+        "price": 646.4,
+        "lot_size": 1
+    },
+    {
+        "ticker": "TGKA",
+        "price": 0.0067,
+        "lot_size": 100000
+    },
+    {
+        "ticker": "TGKB",
+        "price": 0.0066,
+        "lot_size": 1000000
+    },
+    {
+        "ticker": "TGKBP",
+        "price": 0.01021,
+        "lot_size": 100000
+    },
+    {
+        "ticker": "TGKN",
+        "price": 0.00807,
+        "lot_size": 100000
+    },
+    {
+        "ticker": "TNSE",
+        "price": 2260,
+        "lot_size": 1
+    },
+    {
+        "ticker": "TORS",
+        "price": 0.55,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "TORSP",
+        "price": 0.431,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "TRMK",
+        "price": 111.9,
+        "lot_size": 10
+    },
+    {
+        "ticker": "TRNFP",
+        "price": 1244.6,
+        "lot_size": 1
+    },
+    {
+        "ticker": "TTLK",
+        "price": 0.7175,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "TUZA",
+        "price": 183,
+        "lot_size": 10
+    },
+    {
+        "ticker": "UGLD",
+        "price": 0.7349,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "UKUZ",
+        "price": 1086,
+        "lot_size": 1
+    },
+    {
+        "ticker": "UNAC",
+        "price": 0.567,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "UNKL",
+        "price": 5580,
+        "lot_size": 1
+    },
+    {
+        "ticker": "UPRO",
+        "price": 1.724,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "URKZ",
+        "price": 33800,
+        "lot_size": 1
+    },
+    {
+        "ticker": "USBN",
+        "price": 0.1607,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "UTAR",
+        "price": 12.99,
+        "lot_size": 100
+    },
+    {
+        "ticker": "UWGN",
+        "price": 42.46,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VGSB",
+        "price": 10.8,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "VGSBP",
+        "price": 10.54,
+        "lot_size": 1000
+    },
+    {
+        "ticker": "VJGZ",
+        "price": 2645,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VJGZP",
+        "price": 1590,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VKCO",
+        "price": 251.4,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VLHZ",
+        "price": 192.6,
+        "lot_size": 10
+    },
+    {
+        "ticker": "VRSB",
+        "price": 392.5,
+        "lot_size": 10
+    },
+    {
+        "ticker": "VRSBP",
+        "price": 131,
+        "lot_size": 10
+    },
+    {
+        "ticker": "VSEH",
+        "price": 95.35,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VSMO",
+        "price": 31800,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VSYD",
+        "price": 12300,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VSYDP",
+        "price": 8650,
+        "lot_size": 1
+    },
+    {
+        "ticker": "VTBR",
+        "price": 74.5,
+        "lot_size": 1
+    },
+    {
+        "ticker": "WTCM",
+        "price": 13.5,
+        "lot_size": 100
+    },
+    {
+        "ticker": "WTCMP",
+        "price": 12.02,
+        "lot_size": 100
+    },
+    {
+        "ticker": "WUSH",
+        "price": 180.62,
+        "lot_size": 1
+    },
+    {
+        "ticker": "YAKG",
+        "price": 58.2,
+        "lot_size": 10
+    },
+    {
+        "ticker": "YDEX",
+        "price": 4137,
+        "lot_size": 1
+    },
+    {
+        "ticker": "YKEN",
+        "price": 0.479,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "YKENP",
+        "price": 0.372,
+        "lot_size": 10000
+    },
+    {
+        "ticker": "YRSB",
+        "price": 730,
+        "lot_size": 10
+    },
+    {
+        "ticker": "YRSBP",
+        "price": 191,
+        "lot_size": 10
+    },
+    {
+        "ticker": "ZAYM",
+        "price": 144.6,
+        "lot_size": 10
+    },
+    {
+        "ticker": "ZILL",
+        "price": 4315,
+        "lot_size": 1
+    },
+    {
+        "ticker": "ZVEZ",
+        "price": 7.8,
+        "lot_size": 1000
+    }
+]

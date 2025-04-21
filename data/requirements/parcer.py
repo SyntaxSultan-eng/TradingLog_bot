@@ -1,49 +1,78 @@
-import lxml
 import json
 import requests
-
-from bs4 import BeautifulSoup as BS
-
-###################################
-
-headers = {
-    "Accept" : "*/*",
-    "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 OPR/116.0.0.0"
-}
 
 ###################################
 
 def get_names_json_file(url : str) -> None:
 
-    stocks_data = dict()
+    params = {
+        'securities.columns': 'SECID,SHORTNAME,LOTSIZE,SECNAME,ISIN',
+    }
     
-    for num_page in range(1,25):
-        page = requests.get(url + (f"/?page={num_page}"), headers=headers)
-        html_page = BS(page.content, features="lxml")
+    response = requests.get(url=url,params=params)
+    data = response.json()
 
-        names_stocks = html_page.find_all("div", {"data-test" : "investment-share-results-item__name", "class" : "TextResponsive__sc-uiydf7-0 eDGUTY"})
-        ticker_stocks = html_page.find_all("div", {"data-test" : "investment-share-results-item__ticker", "class" : "TextResponsive__sc-uiydf7-0 dLdrbQ"})
+    stocks = []
+    ticker_names = {}
 
-        for index in range(len(names_stocks)):
-            if len(ticker_stocks[index].text.strip()) == 5 and ticker_stocks[index].text.strip() != "TRNFP":
-                stocks_data[ticker_stocks[index].text.strip()] = (names_stocks[index].text.strip() + " привилегированные").upper()
-                continue 
-            stocks_data[ticker_stocks[index].text.strip()] = names_stocks[index].text.strip().upper()
-        #print([i.text for i in names_stocks],[i.text for i in ticker_stocks])
+    for item in data["securities"]['data']:
+        ticker = item[0]
+        company_name_short = item[1].strip()
+
+        if len(ticker) == 5 and ticker[-1] == 'P':
+            company_name_short = f"{company_name_short[:-2]}(Привилегированные)"
+            company_name_short = company_name_short.replace("-","")
+        elif company_name_short[len(item[1])-2:] == 'ао':
+            company_name_short = company_name_short[:len(item[1])-2].strip()
+            company_name_short = company_name_short.replace("-","")
+
+        lot_size = item[2]
+        company_name_full = item[3].replace('\\', '').replace('"', "'")
+        isin = item[4]
+
+        stocks.append({
+            'Тикер' : ticker, 
+            'Название компании' : company_name_short,
+            'Размер лота' : lot_size,
+            'Полное название' : company_name_full,
+            'ISIN' : isin
+        })
+        ticker_names[ticker] = company_name_short
 
     with open("data.json", "w", encoding="utf-8") as file:
-        json.dump(stocks_data,file,ensure_ascii=False, indent=2)
+        json.dump(stocks,file,ensure_ascii=False, indent=2)
+    with open("forpdf.json", "w", encoding="utf-8") as file:
+        json.dump(ticker_names,file,ensure_ascii=False,indent=2)
+
+def moex_price_parcer(url:str):
+    params = {  
+        'marketdata.columns': 'SECID,LAST'  # Тикер и последняя цена
+    }
+
+    response = requests.get(url, params=params)
+    data = response.json()
+
+    prices = {}
+
+    for item in data["marketdata"]['data']:
+
+        ticker = item[0]
+        price = item[1]
+        
+        if price is None:
+            price = 0
+
+        prices[ticker] = price
+
+    with open("stocks_price.json", "w") as file:
+        json.dump(prices,file,ensure_ascii=False,indent=4) 
 
 
 def main():
-    url_stocks_names = "https://www.banki.ru/investment/shares/russian_shares"
-    get_names_json_file(url=url_stocks_names)
+    url_moex = "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities.json"
 
-    # with open('data.json', 'r', encoding="utf-8") as file:
-    #     data = json.load(file)
-    #     print(data)
-        
-
+    #moex_price_parcer(url=url_moex)
+    get_names_json_file(url=url_moex)
 
 if __name__ == "__main__":
     main() 

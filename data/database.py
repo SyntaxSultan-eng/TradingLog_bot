@@ -21,9 +21,10 @@ class Deal(Base):
     lotsize: Mapped[int] = mapped_column()
     isin: Mapped[str] = mapped_column(String(20))
     type_of_deal: Mapped[str] = mapped_column(String(7), index = True)
-    amount_stock: Mapped[int] = mapped_column()
+    amount_lots: Mapped[int] = mapped_column()
+    price_for1_stock : Mapped[float] = mapped_column(Numeric(10,2))
     price_stock: Mapped[float] = mapped_column(Numeric(10, 2))
-    full_price: Mapped[float] = mapped_column(Numeric(20, 2))
+    current_price: Mapped[float] = mapped_column(Numeric(20, 2))
     date_deal : Mapped[datetime] = mapped_column(DateTime)
 
 

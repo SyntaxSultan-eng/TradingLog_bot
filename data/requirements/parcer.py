@@ -26,6 +26,9 @@ def get_names_json_file(url : str) -> None:
             company_name_short = company_name_short[:len(item[1])-2].strip()
             company_name_short = company_name_short.replace("-","")
 
+        if company_name_short[0] == 'i':
+            company_name_short = company_name_short[1:]
+
         lot_size = item[2]
         company_name_full = item[3].replace('\\', '').replace('"', "'")
         isin = item[4]

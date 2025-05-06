@@ -82,6 +82,7 @@ async def buy_deal(message: types.Message, state: FSMContext):
         )
         await message.answer(
             "<u><b>ВАЖНО!</b></u>\n\nМожно указать и тикер акции, но обязательно необходимо написать <b>существующую</b> ценную бумагу.(пока только Ru рынок акций)\n\n" + \
+            "<u><b>Обрати внимание!</b></u>\nТикер можно вводить в любом регистре, а название компании — строго так, как указано в файле.\n\n" + \
             "Вы можете вывести все доступные акции и их тикеры.",
             parse_mode = "HTML",
             reply_markup=keyboard.names_stocks_inline
@@ -101,7 +102,8 @@ async def sell_deal(message: types.Message, state:FSMContext):
             parse_mode="HTML"
         )
         await message.answer(
-            "<u><b>ВАЖНО!</b></u>\n\nМожно указать и тикер акции, но обязательно необходимо написать <b>существующую</b> ценную бумагу.(пока только Ru рынок акций)\n\n" + \
+            "<u><b>ВАЖНО!</b></u>\n\nМожно указать и тикер акции, но обязательно необходимо написать <b>существующую</b> ценную бумагу.(пока только Ru рынок акций)\n" + \
+            "<u><b>Обрати внимание!</b></u> Тикер можно вводить в любом регистре, а название компании — строго так, как указано в файле.\n\n" + \
             "Вы можете вывести все доступные акции и их тикеры.",
             parse_mode = "HTML",
             reply_markup=keyboard.names_stocks_inline
@@ -118,10 +120,10 @@ async def print_stocks_names(callback: types.CallbackQuery, state: FSMContext):
     await callback.message.delete()
 
     file_path = os.path.join("data","requirements","Акции.pdf")
-    json_file = types.FSInputFile(file_path)
+    pdf_file = types.FSInputFile(file_path)
 
     await callback.message.answer_document(
-        document=json_file,
+        document=pdf_file,
         caption="Тикеры и названия акций."
     )
     
@@ -151,7 +153,7 @@ async def name_of_stock(message: types.Message, state: FSMContext):
         return
     await state.set_state(Stocks.amount)
     await message.answer(
-        "Введите <i><b>количество</b></i> акций, которое участвовало в сделке.<i><b>(разрешены только натуральные числа)</b></i>",
+        "Введите <i><b>количество</b></i> лотов, которое участвовало в сделке.<i><b>(разрешены только натуральные числа)</b></i>",
         parse_mode="HTML"
     )
 

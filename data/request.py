@@ -10,36 +10,43 @@ import asyncio
 
 
 async def check_names(message: str) -> bool:
-    async with aiofiles.open(os.path.join('data','requirements','data.json'), "r", encoding="utf-8") as file:
+    async with aiofiles.open(os.path.join('data','requirements','forpdf.json'), "r", encoding="utf-8") as file:
         data = json.loads(await file.read())
     
-    if message.upper() in data.values() or message.upper() in data.keys():
+    if message.lower() in [name.lower() for name in data.values()] or message.upper() in data.keys():
         return True
     return False
 
-async def get_name_ticker(part : str) -> list:
+async def get_full_info(TickerOrName : str) -> dict:
     async with aiofiles.open(os.path.join('data','requirements','data.json'), "r", encoding="utf-8") as file:
         data = json.loads(await file.read())
 
-    part = part.upper()
-    if part in data.keys():
-        return [data.get(part),part]
-    
-    for ticker in data.keys():
-        if data[ticker].upper() == part:
-            return [part,ticker]
+    async with aiofiles.open(os.path.join('data','requirements','stocks_price.json'), "r", encoding="utf-8") as file:
+        prices = json.loads(await file.read())
+
+    TickerOrName = TickerOrName.upper()
+
+    for stock in data:
+        if TickerOrName in [i.upper() for i in list(stock.values())[:2] ]:
+            return stock, prices
+
 
 async def add_new_stock(name : str, amount : int, price : float, deal_type : str):
     current_time = datetime.now()
-    name_and_ticker = await get_name_ticker(name)
+    stock, prices = await get_full_info(name)
 
     async with async_session() as session:
         new_deal = Deal(
-            name_stock=name_and_ticker[0],
-            ticker = name_and_ticker[1],
+            name_stock=stock["Название компании"],
+            full_name = stock["Полное название"],
+            ticker = stock["Тикер"],
+            lotsize = stock["Размер лота"],
+            price_for1_stock = prices[stock["Тикер"]],
+            isin = stock["ISIN"],
             type_of_deal = deal_type,
-            amount_stock=amount,
+            amount_lots=amount,
             price_stock=price,
+            current_price = prices[stock["Тикер"]]*stock["Размер лота"]*amount,
             date_deal=current_time 
         )
         session.add(new_deal)
@@ -61,7 +68,7 @@ async def full_info() -> dict:
     return info_state
 
 async def main():
-    result = await full_info()
+    result = await get_full_info("posi")
     print(result)
 
 if __name__ == "__main__":
